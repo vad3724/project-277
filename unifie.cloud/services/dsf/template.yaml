@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dsf
+  labels:
+    app: dsf
+spec:
+  selector:
+    matchLabels:
+      app: dsf
+  template:
+    metadata:
+      labels:
+        app: dsf
+    spec:
+      containers:
+        - name: dsf
+          image: karthequian/helloworld:latest
+          ports:
+            - containerPort: 80
+              name: http
